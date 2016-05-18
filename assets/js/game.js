@@ -49,6 +49,10 @@ var krillinPickQuote = $("#krillinPick")[0];
 var gohanPickQuote = $("#gohanPick")[0];
 var herculePickQuote = $("#herculePick")[0];
 var krillinEnemyQuote  = $("#krillinEnemyPick")[0];
+var gokuWin = $('#gokuWin')[0];
+var gokuLoss = $('#gokuLoss')[0];
+var gohanWin = $('#gohanWin')[0];
+var gohanLoss = $('#gohanLoss')[0];
 var popSound = $("#pop")[0];
 var hitSound = $("#hit")[0];
 var playerChoice;
@@ -150,6 +154,7 @@ function hideEnemies() {
 
 function defeat(){
 	setTimeout(function(){ $("#choiceDisplay").text("You've defeated " + enemyObject.name + "!");}, 0010);
+		
 		$(removalString).fadeOut(1500);
 		console.log(removalString);
 		setTimeout(function(){ bringEm();}, 0001);
@@ -159,6 +164,26 @@ function defeat(){
 		}
 		$('.health-bar2').css('visibility', 'hidden');
 		doOver();
+		
+}
+
+function deathQuote() {
+	if (enemyObject = goku){
+		gokuLoss.play();
+	};
+
+	if (enemyObject = krillin){
+		krillinLoss.play();
+	};
+
+	if (enemyObject = gohan){
+		gohanLoss.play();
+	};
+
+	if (enemyObject = hercule){
+		herculeLoss.play();
+	};
+	
 }
 //Shows enemy select, minus the player character
 function bringEm() {
@@ -264,7 +289,7 @@ $(".KrillinButton").on("click", function(){
 	    		krillin.fought =true;
 	    		$("#playerCharacter").prepend("<div id =krillinUpper></div>");
 	    		$("#playerCharacter").prepend("<img id = 'krillinChar' src = 'assets/images/krillinChar.png'>");
-				$("#playerCharacter").prepend("<div id =krillinDowner></div>");
+				$("#playerCharacter").prepend("<div id =krillinDowner1></div>");
 				krillinPickQuote.play();
 				$('.health-bar1').css('visibility', 'visible');
 	    		setTimeout(function(){ $("#choiceDisplay").text("Choose your first opponent.");}, 2000);
@@ -351,6 +376,7 @@ $('.health-bar2').on("click", function(){
 	
 	if (hBar2.data('value')<=0){
 		defeat();
+		//setTimeout(function(){ deathQuote();}, 0011);
 		
 	}
 

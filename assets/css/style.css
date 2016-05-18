@@ -1,0 +1,222 @@
+@font-face {
+    font-family: SaiyanSans;
+    src: url("saiyan_sans/Saiyan-Sans.ttf");
+}
+*{
+	margin:0;
+}
+#header {
+	 color: black;
+   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: black;
+	text-align: center;
+	font-size: 80px;
+}
+
+body {
+	background: url(../images/arena.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: SaiyanSans;
+    
+}
+
+#pick{
+	text-align: center;
+	font-size: 40px;
+		 color: black;
+   -webkit-text-fill-color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: white;
+	text-align: center;
+}
+
+#choiceDisplay {
+	text-align: center;
+	font-size: 40px;
+		 color: black;
+   -webkit-text-fill-color: black;
+   -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: white;
+	text-align: center;
+}
+#playerCharacter{
+	/*background:black;*/
+	position: absolute;
+
+}
+
+#enemyCharacter {
+	/*background:black;*/
+	float:right;
+	
+
+}
+#gokuChar{
+	moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+        height:500px;
+        width:250px;
+}
+
+#gohanChar {
+	/*moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";*/
+        height:470px;
+        width:194px;
+}
+
+#krillinChar {
+	height:325px;
+	width:181px;
+	moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+   /* position: absolute;
+    bottom:-475px;*/
+}
+
+#herculeChar {
+	height:464px;
+	width:348px;
+}
+
+.charImg {
+	border-radius: 5px;
+	border: 2px solid red;
+	height: 150;
+	width: 150;
+	position: absolute;
+}
+
+.enemyImg {
+	visibility: hidden;
+	display: block;
+	padding: 0;
+	border-radius: 5px;
+	border: 2px solid red;
+	height: 125;
+	width: 125;
+}
+
+#krillinDowner{
+	height:140px;
+}
+
+#krillinUpper{
+	height:34px;
+}
+
+#enemyGokuChar {
+        height:464px;
+        width:232px;
+        margin-bottom: 0;
+}
+
+#enemyKrillinChar {
+	height:325px;
+	width:181px;
+    bottom:-175px;
+    z-index: 100;
+    
+}
+
+#enemyGohanChar {
+	moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+        height:465px;
+        width:192px;
+}
+
+#enemyHerculeChar {
+	height:464px;
+	width:348px;
+}
+
+/*Codenpen shit*/
+
+.health-bar1 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200px;
+  height: 20px;
+  padding: 5px;
+  background: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  position: relative;
+  visibility: hidden;
+}
+.bar1 {
+  background: #c54;
+  width: 100%;
+  height: 10px;
+  position: relative;
+  
+  transition: width .5s linear;
+}
+
+.hit1 {
+  background: rgba(255,255,255,0.6);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0px;
+  
+  transition: width .5s linear;
+}
+
+.health-bar2 {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200px;
+  height: 20px;
+  padding: 5px;
+  background: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  position: relative;
+  visibility: hidden;
+}
+.bar2 {
+  background: #c54;
+  width: 100%;
+  height: 10px;
+  position: relative;
+  
+  transition: width .5s linear;
+}
+
+.hit2 {
+  background: rgba(255,255,255,0.6);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0px;
+  
+  transition: width .5s linear;
+}

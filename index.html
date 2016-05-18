@@ -1,0 +1,98 @@
+<!DOCTYPE hmtl>
+<html>
+
+<head>
+    <title>DBZ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link href="assets/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <!--Audio tags -->
+        <audio autolay loop>
+            <source src="assets/audio/rockthedragon.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="gokuPick" preload="auto">
+            <source src="assets/audio/gokuQuote.wav"></source>
+        </audio>
+        <audio id="krillinPick" preload="auto">
+            <source src="assets/audio/krillinQuote.wav"></source>
+        </audio>
+        <audio id="gohanPick" preload="auto">
+            <source src="assets/audio/gohanQuote.wav"></source>
+        </audio>
+        <audio id="herculePick" preload="auto">
+            <source src="assets/audio/herculeQuote.wav"></source>
+        </audio>
+        <audio id="krillinEnemyPick" preload="auto">
+            <source src="assets/audio/enemyKrillin.wav"></source>
+        </audio>
+        <audio id="pop" preload="auto">
+            <source src="assets/audio/pop.mp3"></source>
+        </audio>
+        <audio id="hit" preload="auto">
+            <source src="assets/audio/hit.mp3"></source>
+        </audio>
+        <!--Page Head -->
+        <section id="header">
+            <h1>World Martial Arts Tournament</h1>
+        </section>
+        <section class="row">
+            <h2 id="pick">Pick Wisely</h2>
+            <h2 id="choiceDisplay" style='visibility:hidden'>You've chosen <span id =playerChoice></span></h2>
+        </section>
+        <section class="row">
+            <section class="col-sm-2">
+            </section>
+            <!--Player Character Location-->
+            <section id="playerCharacter" class="col-lg-4" style="display:none">
+            <!--Player health bar-->
+                <div class="health-bar1" data-total="" data-value="">
+                    <div class="bar1">
+                        <div class="hit1"></div>
+                    </div>
+                </div>
+            </section>
+            <!--Enemy character Location-->
+            <section id="enemyCharacter" class="col-lg-4" style="display:none">
+
+            	<!-- Enemy Select -->
+                <img id="enemyGoku" class="enemyImg" src="assets/images/goku.jpg">
+                <br>
+                <img id="enemyKrillin" class="enemyImg" src="assets/images/krillin.png">
+                <br>
+                <img id="enemyGohan" class="enemyImg" src="assets/images/gohan.jpg">
+                <br>
+                <img id="enemyHercule" class="enemyImg" src="assets/images/hercule.jpeg">
+                <!--Enemy health bar-->
+                <div class="health-bar2" data-total="" data-value="">
+                    <div class="bar2">
+                        <div class="hit2"></div>
+                    </div>
+                </div>
+            </section>
+            <!--Player Character Select -->
+            <section class="col-sm-2">
+                <img class="charImg gokuButton" src="assets/images/goku.jpg">
+            </section>
+            <section class="col-sm-2">
+                <img class="charImg krillinButton" src="assets/images/krillin.png">
+            </section>
+            <section class="col-sm-2 gohanButton">
+                <img class="charImg" src="assets/images/gohan.jpg">
+            </section>
+            <section class="col-sm-2 herculeButton">
+                <img class="charImg" src="assets/images/hercule.jpeg">
+            </section>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/js/game.js">
+    </script>
+</body>
+
+</html>

@@ -4,7 +4,9 @@ var goku = {
 	atk: 10,
 	matk: 10,
 	catk: 10,
-	fought: false
+	fought: false,
+	victory: $('#gokuWin')[0],
+	death: $('#gokuLoss')[0]
 }
 
 var krillin = {
@@ -13,7 +15,9 @@ var krillin = {
 	atk: 6,
 	matk: 6,
 	catk: 10,
-	fought: false
+	fought: false,
+	victory: $('#krillinWin')[0],
+	death: $('#krillinLoss')[0]
 }
 
 var gohan = {
@@ -22,7 +26,9 @@ var gohan = {
 	atk: 8,
 	matk: 8,
 	catk: 20,
-	fought: false
+	fought: false,
+	victory: $('#gohanWin')[0],
+	death: $('#gohanLoss')[0]
 }
 
 var hercule = {
@@ -31,7 +37,9 @@ var hercule = {
 	atk: 5,
 	matk: 5,
 	catk: 5,
-	fought: false
+	fought: false,
+	victory: $('#herculeWin')[0],
+	death: $('#herculeLoss')[0]
 }
 
 var cellJr = {
@@ -49,10 +57,6 @@ var krillinPickQuote = $("#krillinPick")[0];
 var gohanPickQuote = $("#gohanPick")[0];
 var herculePickQuote = $("#herculePick")[0];
 var krillinEnemyQuote  = $("#krillinEnemyPick")[0];
-var gokuWin = $('#gokuWin')[0];
-var gokuLoss = $('#gokuLoss')[0];
-var gohanWin = $('#gohanWin')[0];
-var gohanLoss = $('#gohanLoss')[0];
 var popSound = $("#pop")[0];
 var hitSound = $("#hit")[0];
 var playerChoice;
@@ -166,24 +170,13 @@ function defeat(){
 		doOver();
 		
 }
-
+	//plays respective loss quote
 function deathQuote() {
-	if (enemyObject = goku){
-		gokuLoss.play();
-	};
+	enemyObject.death.play();
+}
 
-	if (enemyObject = krillin){
-		krillinLoss.play();
-	};
-
-	if (enemyObject = gohan){
-		gohanLoss.play();
-	};
-
-	if (enemyObject = hercule){
-		herculeLoss.play();
-	};
-	
+function victoryQuote(){
+	playerObject.victory.play();
 }
 //Shows enemy select, minus the player character
 function bringEm() {
@@ -192,19 +185,19 @@ function bringEm() {
 		$("#enemyGoku").css('display', 'none');
 		
 		if(krillin.fought ==false){
-		setTimeout(function(){ $("#enemyKrillin").css('visibility', 'visible');}, 2500);
-		setTimeout(function(){$("#enemyKrillin").css('display', 'block');},2501);
-		setTimeout(function(){ popSound.play();}, 2502);
+		setTimeout(function(){ $("#enemyKrillin").css('visibility', 'visible');}, 3000);
+		setTimeout(function(){$("#enemyKrillin").css('display', 'block');},3001);
+		setTimeout(function(){ popSound.play();}, 3002);
 		}
 		if(gohan.fought ==false){
-		setTimeout(function(){ $("#enemyGohan").css('visibility', 'visible');}, 3200);
-		setTimeout(function(){$("#enemyGohan").css('display', 'block');},3201);
-		setTimeout(function(){ popSound.play();}, 3202);
+		setTimeout(function(){ $("#enemyGohan").css('visibility', 'visible');}, 3700);
+		setTimeout(function(){$("#enemyGohan").css('display', 'block');},3701);
+		setTimeout(function(){ popSound.play();}, 3702);
 		}
 		if(hercule.fought ==false){	
-		setTimeout(function(){ $("#enemyHercule").css('visibility', 'visible');}, 3900);
-		setTimeout(function(){$("#enemyHercule").css('display', 'block');},3901);
-		setTimeout(function(){ popSound.play();}, 3902);
+		setTimeout(function(){ $("#enemyHercule").css('visibility', 'visible');}, 4400);
+		setTimeout(function(){$("#enemyHercule").css('display', 'block');},4401);
+		setTimeout(function(){ popSound.play();}, 4402);
 		}
 
 	}
@@ -213,38 +206,38 @@ function bringEm() {
 		$("#enemyCharacter").css('display', 'block');
 		$("#enemyKrillin").css('display', 'none');
 		if(goku.fought ==false){
-		setTimeout(function(){ $("#enemyGoku").css('visibility', 'visible');}, 2500);
-		setTimeout(function(){$("#enemyGoku").css('display', 'block');},2501);
-		setTimeout(function(){ popSound.play();}, 2502);
+		setTimeout(function(){ $("#enemyGoku").css('visibility', 'visible');}, 3000);
+		setTimeout(function(){$("#enemyGoku").css('display', 'block');},3001);
+		setTimeout(function(){ popSound.play();}, 3002);
 		}
 		if(gohan.fought ==false){
-		setTimeout(function(){ $("#enemyGohan").css('visibility', 'visible');}, 3200);
-		setTimeout(function(){$("#enemyGohan").css('display', 'block');},3201);
-		setTimeout(function(){ popSound.play();}, 3202);
+		setTimeout(function(){ $("#enemyGohan").css('visibility', 'visible');}, 3700);
+		setTimeout(function(){$("#enemyGohan").css('display', 'block');},3701);
+		setTimeout(function(){ popSound.play();}, 3702);
 		}
 		if(hercule.fought ==false){	
-		setTimeout(function(){ $("#enemyHercule").css('visibility', 'visible');}, 3900);
-		setTimeout(function(){$("#enemyHercule").css('display', 'block');},3901);
-		setTimeout(function(){ popSound.play();}, 3902);
+		setTimeout(function(){ $("#enemyHercule").css('visibility', 'visible');}, 4400);
+		setTimeout(function(){$("#enemyHercule").css('display', 'block');},4401);
+		setTimeout(function(){ popSound.play();}, 4402);
 		}
 	}
 	if(playerChoice == "Gohan"){
 		$("#enemyCharacter").css('display', 'block');
 		$("#enemyGohan").css('display', 'none');
 		if(goku.fought ==false){
-		setTimeout(function(){ $("#enemyGoku").css('visibility', 'visible');}, 2500);
-		setTimeout(function(){$("#enemyGoku").css('display', 'block');},2501);
-		setTimeout(function(){ popSound.play();}, 2502);
+		setTimeout(function(){ $("#enemyGoku").css('visibility', 'visible');}, 3000);
+		setTimeout(function(){$("#enemyGoku").css('display', 'block');},3001);
+		setTimeout(function(){ popSound.play();}, 3002);
 		}
 		if(krillin.fought ==false){
-		setTimeout(function(){ $("#enemyKrillin").css('visibility', 'visible');}, 3200);
-		setTimeout(function(){$("#enemyKrillin").css('display', 'block');},3201);
-		setTimeout(function(){ popSound.play();}, 3202);	
+		setTimeout(function(){ $("#enemyKrillin").css('visibility', 'visible');}, 3700);
+		setTimeout(function(){$("#enemyKrillin").css('display', 'block');},3701);
+		setTimeout(function(){ popSound.play();}, 3702);	
 		}
 		if(hercule.fought ==false){
-		setTimeout(function(){ $("#enemyHercule").css('visibility', 'visible');}, 3900);
-		setTimeout(function(){$("#enemyHercule").css('display', 'block');},3901);
-		setTimeout(function(){ popSound.play();}, 3901);
+		setTimeout(function(){ $("#enemyHercule").css('visibility', 'visible');}, 4400);
+		setTimeout(function(){$("#enemyHercule").css('display', 'block');},4401);
+		setTimeout(function(){ popSound.play();}, 4401);
 		}	
 	}
 
@@ -376,7 +369,8 @@ $('.health-bar2').on("click", function(){
 	
 	if (hBar2.data('value')<=0){
 		defeat();
-		//setTimeout(function(){ deathQuote();}, 0011);
+		setTimeout(function(){ deathQuote();}, 0011);
+		setTimeout(function(){ victoryQuote();}, 3500);
 		
 	}
 

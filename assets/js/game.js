@@ -1,6 +1,6 @@
 var goku = {
 	name: "Goku",
-	hp: 300,
+	hp: 200,
 	atk: 10,
 	matk: 10,
 	catk: 10,
@@ -65,6 +65,7 @@ var newValue2;
 var playerObject;
 var enemyObject;
 var removalString; 
+var clickCount = 0;
   
   var hitBtn = $('health-bar2'),
       reset = $('button.reset'),
@@ -162,14 +163,20 @@ function defeat(){
 		$(removalString).fadeOut(1500);
 		console.log(removalString);
 		setTimeout(function(){ bringEm();}, 0001);
-		setTimeout(function(){ $("#choiceDisplay").text("Choose your next enemy");}, 5000);	
+			
 		if(krillin.fought == true){
 			setTimeout(function(){ $("#krillinDowner").css('display', 'none');},1001);
 		}
 		$('.health-bar2').css('visibility', 'hidden');
 		doOver();
+		clickCount++;
+		return clickCount;
 		
-}
+		
+			setTimeout(function(){ $("#choiceDisplay").text("Choose your next enemy");}, 3000);
+		}
+		
+
 	//plays respective loss quote
 function deathQuote() {
 	enemyObject.death.play();
@@ -273,6 +280,7 @@ $(".gokuButton").on("click", function(){
 	    		$('.health-bar1').css('visibility', 'visible');
 	    		setTimeout(function(){ $("#choiceDisplay").text("Choose your first opponent.");}, 2000);
 	    		bringEm();
+	    		
 			});
 
 $(".KrillinButton").on("click", function(){
@@ -287,6 +295,7 @@ $(".KrillinButton").on("click", function(){
 				$('.health-bar1').css('visibility', 'visible');
 	    		setTimeout(function(){ $("#choiceDisplay").text("Choose your first opponent.");}, 2000);
 	    		bringEm();
+	    		
 	    		});
 $(".gohanButton").on("click", function(){
 				playerChoice = "Gohan";
@@ -299,6 +308,7 @@ $(".gohanButton").on("click", function(){
 	    		$('.health-bar1').css('visibility', 'visible');
 	    		setTimeout(function(){ $("#choiceDisplay").text("Choose your first opponent.");}, 2000);
 	    		bringEm();
+	    		
 	    		});							
 
 $(".herculeButton").on("click", function(){
@@ -312,6 +322,7 @@ $(".herculeButton").on("click", function(){
 	    		$('.health-bar1').css('visibility', 'visible');
 	    		setTimeout(function(){ $("#choiceDisplay").text("Choose your first opponent.");}, 2000);
 	    		bringEm();
+	    		
 	    		});
 
 //sets behavior for enemy select buttons
@@ -324,6 +335,7 @@ $("#enemyGoku").on("click", function(){
 	$("#enemyCharacter").prepend("<img id = 'enemyGokuChar' src = 'assets/images/gokuChar.png'>");
 	gokuPickQuote.play();
 	goku.fought = true;
+
 	setTimeout(function(){ $("#choiceDisplay").text("Click your opponent's HP to attack.");}, 1000);
 	});	
 
@@ -337,6 +349,7 @@ $("#enemyKrillin").on("click", function(){
 	$("#enemyCharacter").prepend("<div id =krillinDowner></div>")
 	krillinEnemyPick.play();
 	krillin.fought = true;
+
 	setTimeout(function(){ $("#choiceDisplay").text("Click your opponent's HP to attack.");}, 1000);
 	});
 
@@ -349,6 +362,7 @@ $("#enemyGohan").on("click", function(){
 	$("#enemyCharacter").prepend("<img id = 'enemyGohanChar' src = 'assets/images/gohanChar.png'>");
 	gohanPickQuote.play();
 	gohan.fought = true;
+	
 	setTimeout(function(){ $("#choiceDisplay").text("Click your opponent's HP to attack.");}, 1000);
 	});
 
@@ -368,15 +382,18 @@ $("#enemyHercule").on("click", function(){
 $('.health-bar2').on("click", function(){
 	
 	if (hBar2.data('value')<=0){
+		clickCount++;
 		defeat();
+		console.log(clickCount);
+		if(clickCount === 6){
+			setTimeout(function(){ $("#choiceDisplay").text("You Win!");}, 5000);
+		}
 		setTimeout(function(){ deathQuote();}, 0011);
-		setTimeout(function(){ victoryQuote();}, 3500);
+		setTimeout(function(){ victoryQuote();}, 3700);
+
 		
 	}
 
-	/*else if(((goku.fought = true) && (krillin.fought = true)) && ((gohan.fought = true) && (hercule.fought = true))){
-			$("#choiceDisplay").text("You win!");
-		}*/
 
 	else{
 	takeHp1();
